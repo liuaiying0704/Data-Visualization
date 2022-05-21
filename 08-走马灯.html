@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      img {
+        width: 200px;
+      }
+
+      .box {
+        width: 600px;
+        height: 112px;
+        border: 5px solid #000;
+        margin: 100px auto;
+        overflow: hidden;
+      }
+
+      .box ul {
+        width: 3000px;
+        /* 调用动画 */
+        animation: move 5s linear infinite;
+      }
+
+      .box ul li {
+        float: left;
+      }
+
+      /* 考察点：1、自定义动画。2、学习无缝衔接轮播图的布局 */
+      /* 自定义动画 */
+      @keyframes move {
+        to {
+          transform: translate(-1400px);
+        }
+      }
+
+      .box:hover ul {
+        /* 鼠标经过，暂停动画 */
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li><img src="./images/1.jpg" alt="" /></li>
+        <li><img src="./images/2.jpg" alt="" /></li>
+        <li><img src="./images/3.jpg" alt="" /></li>
+        <li><img src="./images/4.jpg" alt="" /></li>
+        <li><img src="./images/5.jpg" alt="" /></li>
+        <li><img src="./images/6.jpg" alt="" /></li>
+        <li><img src="./images/7.jpg" alt="" /></li>
+        <!-- 补齐空白区域 -->
+        <li><img src="./images/1.jpg" alt="" /></li>
+        <li><img src="./images/2.jpg" alt="" /></li>
+        <li><img src="./images/3.jpg" alt="" /></li>
+      </ul>
+    </div>
+  </body>
+</html>
