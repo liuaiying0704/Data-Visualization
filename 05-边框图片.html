@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>边框图片</title>
+    <style>
+      div {
+        width: 400px;
+        height: 300px;
+        border: 40px solid pink;
+        /* 不要跟单位 因为border-image-width: 40px;  border为40，内容就不会在边框里面*/
+        border-image-source: url(./images/border.png);
+        border-image-slice: 30 30 30 30;
+        /* border-image-slice: 30; */
+        /* 这个属性默认的是 border的宽度 但是 有区别，  这个是 边框图片的宽度 不会挤压文字 */
+        border-width: 40px;
+        /* border-image-width: 40px; */
+        /* 边框图片宽度*/
+        border-image-repeat: repeat;
+        /* 中间的填充不完整 */
+        border-image-repeat: stretch;
+        /*中间就一个格子被拉伸  */
+        border-image-repeat: space;
+        border-image-repeat: round;
+      }
+      /* 案例中的图================= */
+      .box {
+        width: 400px;
+        height: 300px;
+        /* 盒子宽高 */
+        border: 15px solid pink;
+        /* 切图做边框 */
+        border-image-source: url(./images/border\ 2.png);
+        border-image-slice: 51 38 20 132;
+        border-width: 51px 38px 20px 132px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>奥利给</div>
+    <div class="box">liua</div>
+  </body>
+</html>
